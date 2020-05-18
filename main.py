@@ -3,6 +3,7 @@
 
 from random import shuffle
 import numpy as np
+import string
 
 def get_input():
 
@@ -19,15 +20,21 @@ def get_input():
     print('it passed', inputString)
     return inputString
 
+def convert_string_to_serie(string):
+    """
+        :param string: input to convert to numerical serie
+        :return: list of notes
+    """
+    # Convert string to notes
+    map_letter_note = {'a':'A', 'b': 'B', 'c':'C', 'd': 'D', 'e': 'E', 'f':'F' , 'g': 'G', 'h': 'A#','i': 'C#','j': 'D#','k': 'F#','l': 'G#','m': 'A','n': 'G',
+                        'o': 'D','p': 'E','q': 'F','r': 'G','s': 'A#','t': 'C#','u': 'D#','v': 'F#','w': 'G#','x': 'C','y': 'D#','z': 'D'}
 
-def get_notes_serie(string):
-    """
-    :param string: input to convert to music
-    :return: list of notes
-    """
-    # Letter/Note conversion
-    note_map = {'C':0, 'C#':1, 'D':2, 'D#':3, 'E':4, 'F':5, 'F#':6, 'G':7,
-                'G#':8, 'A':9, 'A#':10, 'B':11}
+    alphabet = string.ascii_lowercase
+
+    # Convert notes to numerical serie
+    map_note_number = {'C': 0, 'C#': 1, 'D': 2, 'D#': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7,
+                'G#': 8, 'A': 9, 'A#': 10, 'B': 11}
+
 
 def create_random_serie():
 
